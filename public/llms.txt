@@ -1,0 +1,100 @@
+# Sèo Trum — Dịch Vụ Tự Động Hoá (Automation) & Phần Mềm Theo Yêu Cầu
+
+> Sèo Trum cung cấp dịch vụ tự động hoá (automation), xây dựng phần mềm, web app, bot và tích hợp API theo yêu cầu giúp doanh nghiệp giảm thao tác thủ công và vận hành gọn hơn.
+
+This file helps language models discover the most useful content on this site.
+
+## Home
+
+- [Việc lặp lại,
+để phần mềm lo.](https://seotrum.com): Sèo Trum cung cấp dịch vụ tự động hoá (automation), xây dựng phần mềm, web app, bot và tích hợp API theo yêu cầu giúp doanh nghiệp giảm thao tác thủ công và vận hành gọn hơn.
+
+## About
+
+- [Người hiểu bài toán.
+Người trực tiếp xây.](https://seotrum.com/about): Sèo Trum là thương hiệu cá nhân và studio nơi tôi trực tiếp khảo sát, thiết kế và xây dựng phần mềm tự động hoá, ứng dụng nội bộ và nền tảng web chuẩn SEO.
+
+## Authors
+
+- [Chuyên Gia & Tác Giả Tại Sèo Trum](https://seotrum.com/authors): Hồ sơ chuyên gia và các bài viết nghiên cứu chuyên sâu về Hệ thống Tự động hoá, Lập trình Bot/API và Chiến lược SEO thực chiến từ Sèo Trum.
+- [Sèo Trum](https://seotrum.com/authors/seo-trum): Kỹ sư Phần mềm Tự động hoá (Custom Web/App, API, Bot) & Kiến trúc Website chuẩn SEO — Người trực tiếp khảo sát và xây dựng hệ thống tại Sèo Trum.
+
+## Automation-studio
+
+- [Xem cách phần mềm xử lý việc lặp lại.](https://seotrum.com/automation-studio): Chạy thử luồng tự động hoá 3 bước (Nhận dữ liệu, Xử lý theo quy tắc, Đồng bộ hệ thống) và ước tính khối lượng thao tác lặp lại mỗi tháng cùng Sèo Trum.
+
+## Blog
+
+- [Chia sẻ từ việc thật.](https://seotrum.com/blog): Tổng hợp các bài viết chuyên sâu từ Sèo Trum về kiến trúc hệ thống tự động hoá, phát triển ứng dụng Web/App/Bot/API, SEO tự động hoá, Technical SEO và tối ưu AI Search (GEO).
+- [Chi Phí & Quy Trình Thuê Dịch Vụ Tự Động Hoá (Automation) Doanh Nghiệp Thực Chiến](https://seotrum.com/blog/bang-gia-va-quy-trinh-thue-dich-vu-tu-dong-hoa-automation-doanh-nghiep): Cẩm nang chi tiết về chi phí, cách tính ROI và quy trình 4 bước khi thuê dịch vụ tự động hoá (automation) quy trình vận hành & xây dựng phần mềm theo yêu cầu tại Sèo Trum.
+- [Hệ Thống Tự Động Hoá Doanh Nghiệp: Kiến Trúc, Lộ Trình Xây Dựng & Tối Ưu Hiệu Suất](https://seotrum.com/blog/he-thong-tu-dong-hoa-doanh-nghiep): Cẩm nang toàn diện từ Sèo Trum về hệ thống tự động hoá doanh nghiệp: phân biệt ứng dụng tự động hoá may đo (Custom App/API/Bot) và No-code, kèm lộ trình triển khai đạt ROI tối đa.
+- [Trung Tâm Kiến Thức Hệ Thống Tự Động Hoá & Chiến Lược SEO Thực Chiến (Trang 2)](https://seotrum.com/blog/page/2): Tổng hợp các bài viết chuyên sâu từ Sèo Trum về kiến trúc hệ thống tự động hoá, phát triển ứng dụng Web/App/Bot/API, SEO tự động hoá, Technical SEO và tối ưu AI Search (GEO).
+- [SEO Tự Động Hoá & Chiến Lược SEO Tổng Thể: Cách Chiếm Lĩnh Top Google Và AI Search Bền Vững](https://seotrum.com/blog/seo-tu-dong-hoa-va-chien-luoc-seo-tong-the): Khám phá phương pháp SEO tự động hoá kết hợp chiến lược SEO tổng thể từ Sèo Trum: xây dựng Topical Authority (Hub-and-Spoke), ứng dụng lập trình vào SEO và tối ưu chuyển đổi.
+- [So Sánh n8n, Make, Zapier Và Custom Code Automation: Doanh Nghiệp Nên Chọn Giải Pháp Nào?](https://seotrum.com/blog/so-sanh-n8n-make-zapier-va-custom-code-automation): Phân tích kỹ thuật và bài toán chi phí giữa n8n (Self-hosted), Make, Zapier và lập trình Custom Code Automation (Node.js/Python) khi triển khai dịch vụ tự động hoá doanh nghiệp.
+- [Tối Ưu Technical SEO Trên Next.js, Core Web Vitals (INP) & Chuẩn GEO (llms.txt) Cho AI Search](https://seotrum.com/blog/toi-uu-technical-seo-nextjs-va-ai-search-geo): Phân tích kỹ thuật chuyên sâu từ Sèo Trum: cách tối ưu Technical SEO trên Next.js App Router, đạt điểm tuyệt đối Core Web Vitals (INP, LCP), JSON-LD Schema và cấu hình llms.txt cho AI Search.
+- [Tự Động Hoá Quy Trình Bán Hàng & Đồng Bộ CRM Qua API: Kiến Trúc Thực Chiến](https://seotrum.com/blog/tu-dong-hoa-quy-trinh-ban-hang-va-dong-bo-crm-api): Hướng dẫn kiến trúc tự động hoá quy trình bán hàng (Sales Automation): tự động thu nhận Lead đa kênh, làm sạch dữ liệu, phân bổ Sale trên CRM và báo tin qua Bot Zalo/Telegram.
+- [Xây Dựng Ứng Dụng Tự Động Hoá Theo Yêu Cầu: Kết Hợp Custom Web App, Bot & API Đa Nền Tảng](https://seotrum.com/blog/xay-dung-ung-dung-tu-dong-hoa-custom-api-bot): Hướng dẫn chuyên sâu từ Sèo Trum về cách thiết kế và xây dựng ứng dụng tự động hoá theo yêu cầu: kiến trúc Custom Web App, lập trình Bot Telegram/Zalo và tích hợp API chịu tải cao.
+
+## Case-studies
+
+- [Xây để dùng. Làm để chạy.](https://seotrum.com/case-studies): Khám phá các mô hình giải pháp và giao diện dự án minh hoạ của Sèo Trum: Hệ thống quản lý vận hành, công cụ đồng bộ dữ liệu API, Bot tự động và kiến trúc web chuẩn SEO.
+- [Công cụ Kiểm tra, Chuẩn hoá & Đồng bộ Dữ liệu Đa nền tảng](https://seotrum.com/case-studies/cong-cu-xu-ly-va-dong-bo-du-lieu-da-kenh): Mô hình giải pháp minh hoạ của Sèo Trum: tự động kiểm tra định dạng, lọc trùng bản ghi và đồng bộ dữ liệu sạch giữa bảng tính, CRM và cơ sở dữ liệu qua API.
+- [Hệ thống Bot Thông báo Trạng thái & Tra cứu Nhanh](https://seotrum.com/case-studies/he-thong-bot-thong-bao-va-tra-cuu-nhanh): Mô hình giải pháp minh hoạ của Sèo Trum: kết nối sự kiện vận hành với Bot thông báo tự động, nhắc việc đúng bộ phận và hỗ trợ tra cứu trạng thái nhanh trong khung chat.
+- [Hệ thống Quản lý & Điều phối Vận hành Tập trung](https://seotrum.com/case-studies/he-thong-quan-ly-va-dieu-phoi-van-hanh): Mô hình giải pháp minh hoạ của Sèo Trum: xây dựng Web App quản lý công việc, phân luồng trạng thái xử lý và theo dõi dữ liệu vận hành tập trung trên một màn hình.
+- [Kiến trúc Website Dịch vụ & Hệ thống Kiểm tra Cấu trúc SEO](https://seotrum.com/case-studies/kien-truc-website-dich-vu-toi-uu-seo): Mô hình giải pháp minh hoạ của Sèo Trum: tổ chức cấu trúc website phân trang theo từng dịch vụ (Silo Architecture), tích hợp Schema JSON-LD và kiểm soát chất lượng SEO.
+
+## Categories
+
+- [Chuyên mục kiến thức thực chiến](https://seotrum.com/categories): Khám phá các chuyên mục bài viết thực chiến về hệ thống tự động hoá, kỹ thuật phần mềm, chiến lược SEO và kiến trúc website từ Sèo Trum.
+- [Chuyên mục: Chiến Lược SEO](https://seotrum.com/categories/chien-luoc-seo): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Chiến Lược SEO do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: Chuyển Đổi Số](https://seotrum.com/categories/chuyen-doi-so): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Chuyển Đổi Số do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: Hệ Thống Tự Động Hoá](https://seotrum.com/categories/he-thong-tu-dong-hoa): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Hệ Thống Tự Động Hoá do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: Kiến Trúc Phần Mềm](https://seotrum.com/categories/kien-truc-phan-mem): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Kiến Trúc Phần Mềm do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: Kỹ Thuật Phần Mềm](https://seotrum.com/categories/ky-thuat-phan-mem): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Kỹ Thuật Phần Mềm do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: SEO Tự Động Hoá](https://seotrum.com/categories/seo-tu-dong-hoa): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục SEO Tự Động Hoá do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: Technical SEO](https://seotrum.com/categories/technical-seo): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Technical SEO do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+- [Chuyên mục: Tích Hợp Hệ Thống](https://seotrum.com/categories/tich-hop-he-thong): Tổng hợp các bài phân tích chuyên sâu thuộc chuyên mục Tích Hợp Hệ Thống do Sèo Trum biên soạn từ kinh nghiệm xây dựng hệ thống thực tế.
+
+## Contact
+
+- [Bạn đang làm tay việc gì mỗi ngày?](https://seotrum.com/contact): Mô tả thao tác thủ công đang lặp lại mỗi ngày của bạn. Cùng Sèo Trum tìm hướng xây công cụ tự động hoá, web app hoặc tích hợp hệ thống gọn rõ.
+
+## Privacy-policy
+
+- [Chính sách bảo mật thông tin trao đổi](https://seotrum.com/privacy-policy): Nguyên tắc bảo mật thông tin liên hệ và dữ liệu mô tả quy trình nghiệp vụ khi trao đổi bài toán tự động hoá và phần mềm cùng Sèo Trum.
+
+## Services
+
+- [Dịch Vụ Tự Động Hoá (Automation) & Phần Mềm Theo Yêu Cầu](https://seotrum.com/services): Sèo Trum cung cấp dịch vụ tự động hoá (automation), xây dựng phần mềm theo yêu cầu, web app nội bộ, tích hợp API & Bot giúp doanh nghiệp loại bỏ thao tác thủ công và đồng bộ dữ liệu.
+- [Dịch Vụ Tự Động Hoá Quy Trình (Automation) & Xây Dựng Công Cụ Riêng](https://seotrum.com/services/cong-cu-tu-dong-hoa): Dịch vụ tự động hoá (automation) quy trình vận hành theo yêu cầu tại Sèo Trum: xây dựng công cụ tự động nhận dữ liệu, chuẩn hoá quy tắc, đồng bộ CRM/Sheet và chạy ngầm 24/7.
+- [Kiến trúc Website Chuẩn SEO & Hệ thống Tự động hoá SEO](https://seotrum.com/services/kien-truc-web-va-tu-dong-hoa-seo): Xây dựng website có cấu trúc thông tin mạch lạc, chuẩn Technical SEO, Schema JSON-LD và kết hợp công cụ tự động hoá hỗ trợ quản trị nội dung bền vững.
+- [Thiết kế Web & Ứng dụng Nội bộ Theo Yêu cầu (Custom Web App)](https://seotrum.com/services/thiet-ke-web-app-theo-yeu-cau): Xây dựng ứng dụng web nội bộ, dashboard quản lý vận hành và cổng khách hàng theo yêu cầu. Giao diện gọn rõ, phân quyền chặt chẽ, bám sát quy trình thực tế.
+- [Phát triển Bot Tự động & Tích hợp API Đa nền tảng](https://seotrum.com/services/tich-hop-api-bot-he-thong): Kết nối CRM, bảng tính, website và công cụ chat nội bộ qua API/Webhook. Xây dựng Bot thông báo trạng thái, nhắc việc và đồng bộ dữ liệu tự động.
+
+## Tags
+
+- [Từ khoá & Chủ đề kỹ thuật](https://seotrum.com/tags): Tra cứu nhanh các bài viết và kiến thức thực chiến theo từng từ khoá kỹ thuật: tự động hoá, xây dựng ứng dụng, lập trình bot, tích hợp API và SEO.
+- [Chủ đề: #bảng giá dịch vụ tự động hoá](https://seotrum.com/tags/bang-gia-dich-vu-tu-dong-hoa): Tổng hợp bài viết thực chiến về chủ đề #bảng giá dịch vụ tự động hoá do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #chiến lược seo](https://seotrum.com/tags/chien-luoc-seo): Tổng hợp bài viết thực chiến về chủ đề #chiến lược seo do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #custom code automation](https://seotrum.com/tags/custom-code-automation): Tổng hợp bài viết thực chiến về chủ đề #custom code automation do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #dịch vụ tự động hoá automation](https://seotrum.com/tags/dich-vu-tu-dong-hoa-automation): Tổng hợp bài viết thực chiến về chủ đề #dịch vụ tự động hoá automation do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #đồng bộ crm api](https://seotrum.com/tags/dong-bo-crm-api): Tổng hợp bài viết thực chiến về chủ đề #đồng bộ crm api do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #geo ai search](https://seotrum.com/tags/geo-ai-search): Tổng hợp bài viết thực chiến về chủ đề #geo ai search do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #hệ thống tự động hoá](https://seotrum.com/tags/he-thong-tu-dong-hoa): Tổng hợp bài viết thực chiến về chủ đề #hệ thống tự động hoá do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #lập trình bot](https://seotrum.com/tags/lap-trinh-bot): Tổng hợp bài viết thực chiến về chủ đề #lập trình bot do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #llms.txt](https://seotrum.com/tags/llmstxt): Tổng hợp bài viết thực chiến về chủ đề #llms.txt do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #make](https://seotrum.com/tags/make): Tổng hợp bài viết thực chiến về chủ đề #make do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #n8n](https://seotrum.com/tags/n8n): Tổng hợp bài viết thực chiến về chủ đề #n8n do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #seo](https://seotrum.com/tags/seo): Tổng hợp bài viết thực chiến về chủ đề #seo do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #sèo trum](https://seotrum.com/tags/seo-trum): Tổng hợp bài viết thực chiến về chủ đề #sèo trum do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #seo tự động hoá](https://seotrum.com/tags/seo-tu-dong-hoa): Tổng hợp bài viết thực chiến về chủ đề #seo tự động hoá do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #technical seo](https://seotrum.com/tags/technical-seo): Tổng hợp bài viết thực chiến về chủ đề #technical seo do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #thuê dịch vụ automation](https://seotrum.com/tags/thue-dich-vu-automation): Tổng hợp bài viết thực chiến về chủ đề #thuê dịch vụ automation do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #tích hợp api](https://seotrum.com/tags/tich-hop-api): Tổng hợp bài viết thực chiến về chủ đề #tích hợp api do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #tích hợp api bot](https://seotrum.com/tags/tich-hop-api-bot): Tổng hợp bài viết thực chiến về chủ đề #tích hợp api bot do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #tự động hoá](https://seotrum.com/tags/tu-dong-hoa): Tổng hợp bài viết thực chiến về chủ đề #tự động hoá do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #tự động hoá quy trình](https://seotrum.com/tags/tu-dong-hoa-quy-trinh): Tổng hợp bài viết thực chiến về chủ đề #tự động hoá quy trình do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #tự động hoá quy trình bán hàng](https://seotrum.com/tags/tu-dong-hoa-quy-trinh-ban-hang): Tổng hợp bài viết thực chiến về chủ đề #tự động hoá quy trình bán hàng do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #xây dựng ứng dụng tự động hoá](https://seotrum.com/tags/xay-dung-ung-dung-tu-dong-hoa): Tổng hợp bài viết thực chiến về chủ đề #xây dựng ứng dụng tự động hoá do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+- [Chủ đề: #zapier](https://seotrum.com/tags/zapier): Tổng hợp bài viết thực chiến về chủ đề #zapier do Sèo Trum biên soạn: quy trình tự động hoá, tích hợp hệ thống và tối ưu SEO.
+
