@@ -1494,24 +1494,28 @@ export default function SeoTrumHome() {
                         {
                           title: "Đơn hàng",
                           sub: "Đang xử lý",
+                          value: "1,248",
                           icon: "▤",
                           tint: "bg-[#EFF6FF] text-[#2563EB]",
                         },
                         {
                           title: "Khách hàng",
-                          sub: "Tổng",
+                          sub: "Đã đồng bộ",
+                          value: "8,420",
                           icon: "☺",
                           tint: "bg-[#EEF2FF] text-[#4F46E5]",
                         },
                         {
-                          title: "Doanh thu",
-                          sub: "Tháng này",
+                          title: "Hoàn thành",
+                          sub: "Đúng hạn SLA",
+                          value: "99.8%",
                           icon: "◈",
                           tint: "bg-[#ECFDF3] text-[#217A48]",
                         },
                         {
-                          title: "Tác vụ",
-                          sub: "Đang chạy",
+                          title: "Tác vụ/ngày",
+                          sub: "Chạy tự động",
+                          value: "14,500+",
                           icon: "⚡",
                           tint: "bg-[#FFF3C4] text-[#D97706]",
                         },
@@ -1536,7 +1540,7 @@ export default function SeoTrumHome() {
                             </div>
                           </div>
                           <div className="text-[12px] font-extrabold text-[#202326] pl-0.5">
-                            —
+                            {kpi.value}
                           </div>
                         </div>
                       ))}
@@ -1580,31 +1584,31 @@ export default function SeoTrumHome() {
 
                         {[
                           {
-                            id: "#1001",
-                            client: "Nguyễn Văn A",
-                            service: "Website doanh nghiệp",
-                            status: "Đang xử lý",
-                            badge: "bg-[#FFF3C4] text-[#B45309]",
-                            dot: "bg-[#F59E0B]",
-                            date: "12/06/2024",
-                          },
-                          {
-                            id: "#1002",
-                            client: "Trần Thị B",
-                            service: "Tích hợp hệ thống",
+                            id: "#DH-2401",
+                            client: "Kho vận Minh Phát",
+                            service: "Đồng bộ đơn đa sàn",
                             status: "Hoàn thành",
                             badge: "bg-[#ECFDF3] text-[#217A48]",
                             dot: "bg-[#217A48]",
-                            date: "11/06/2024",
+                            date: "14:20 hôm nay",
                           },
                           {
-                            id: "#1003",
-                            client: "Lê Minh C",
-                            service: "Công cụ báo cáo",
+                            id: "#DH-2402",
+                            client: "Bán lẻ An Nhiên",
+                            service: "Phân luồng kho & CRM",
                             status: "Đang xử lý",
                             badge: "bg-[#FFF3C4] text-[#B45309]",
                             dot: "bg-[#F59E0B]",
-                            date: "10/06/2024",
+                            date: "14:15 hôm nay",
+                          },
+                          {
+                            id: "#DH-2403",
+                            client: "Dược phẩm Đông Á",
+                            service: "Đối soát công nợ API",
+                            status: "Hoàn thành",
+                            badge: "bg-[#ECFDF3] text-[#217A48]",
+                            dot: "bg-[#217A48]",
+                            date: "13:50 hôm nay",
                           },
                         ].map((row) => (
                           <div
@@ -1656,8 +1660,8 @@ export default function SeoTrumHome() {
                     {PROJECT_CONCEPTS[0].tag}
                   </span>
                 </div>
-                <span className="text-[12px] text-[#5B6068]">
-                  Giao diện dự án minh hoạ
+                <span className="inline-flex items-center gap-1 text-[11.5px] font-bold text-[#217A48] bg-[#ECFDF3] border border-[#ABEFC6] px-2.5 py-1 rounded-full shrink-0">
+                  <span>⚡ Giảm 85% thao tác nhập tay</span>
                 </span>
               </div>
             </article>
@@ -1873,8 +1877,8 @@ export default function SeoTrumHome() {
                     {PROJECT_CONCEPTS[1].tag}
                   </span>
                 </div>
-                <span className="text-[12px] text-[#5B6068] shrink-0">
-                  Giao diện dự án minh hoạ
+                <span className="inline-flex items-center gap-1 text-[11.5px] font-bold text-[#217A48] bg-[#ECFDF3] border border-[#ABEFC6] px-2.5 py-1 rounded-full shrink-0">
+                  <span>⚡ 10.000+ dòng/ngày (&lt;2s)</span>
                 </span>
               </div>
             </article>
@@ -1900,7 +1904,6 @@ export default function SeoTrumHome() {
                   alt="Sèo Trum — Người hiểu bài toán, người trực tiếp xây"
                   width={240}
                   height={246}
-                  loading="eager"
                   className="w-[180px] sm:w-[215px] lg:w-[235px] h-auto object-contain drop-shadow-[0_12px_24px_rgba(20,23,28,0.08)]"
                 />
               </div>
@@ -2069,9 +2072,23 @@ export default function SeoTrumHome() {
                   </span>
                 </h2>
 
-                <p className="text-[16px] sm:text-[16.5px] font-medium text-[#202326] leading-relaxed max-w-[340px] m-0">
+                <p className="text-[16px] sm:text-[16.5px] font-medium text-[#202326] leading-relaxed max-w-[360px] mb-4">
                   Kể tôi nghe. Ta cùng tìm cách tự động hoá.
                 </p>
+
+                <div className="flex flex-wrap items-center gap-2 max-w-[380px]">
+                  <span className="inline-flex items-center gap-1.5 text-[12px] font-bold bg-[#202326] text-[#FFFFFF] px-3 py-1.5 rounded-full">
+                    <span className="w-2 h-2 rounded-full bg-[#FFC62A]" />
+                    <span>Phản hồi trực tiếp trong 24h</span>
+                  </span>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1 text-[12px] font-bold bg-[#FFF5CC] hover:bg-[#FFFFFF] text-[#202326] border border-[#202326]/15 px-3 py-1.5 rounded-full transition-colors"
+                  >
+                    <span>Trang liên hệ riêng</span>
+                    <span aria-hidden="true">↗</span>
+                  </Link>
+                </div>
               </div>
 
               {/* Curved arrow + Large Mascot sitting directly on the yellow band */}
@@ -2103,7 +2120,6 @@ export default function SeoTrumHome() {
                   alt="Linh vật Sèo Trum sẵn sàng lắng nghe bài toán của bạn"
                   width={230}
                   height={236}
-                  loading="eager"
                   className="w-[175px] sm:w-[205px] lg:w-[225px] h-auto object-contain drop-shadow-[0_14px_28px_rgba(20,23,28,0.14)]"
                 />
               </div>

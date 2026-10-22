@@ -22,7 +22,6 @@ const Footer = () => {
                 alt="Sèo Trum"
                 width={148}
                 height={55}
-                loading="eager"
                 className="w-[132px] lg:w-[144px] h-auto object-contain"
               />
             </Link>
