@@ -1,12 +1,507 @@
-@utility bg-gradient {
-  @apply bg-linear-to-b from-[rgba(249,249,249,1)] from-[0.53%] to-white to-[83.28%] dark:from-darkmode-light dark:to-darkmode-body;
+:root {
+  --page: #ffffff;
+  --surface: #f6f7f8;
+  --surface-warm: #fffcf1;
+  --ink: #202326;
+  --muted: #5b6068;
+  --border: #e5e7eb;
+  --brand: #ffc62a;
+  --brand-hover: #f0b900;
+  --success: #217a48;
+  --error: #b42318;
+
+  --dur-fast: 160ms;
+  --dur-normal: 240ms;
+  --dur-reveal: 520ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-ui: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* form style */
+/* Smooth anchor offset for sticky header (80-88px + 16px) */
+section[id],
+div[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Container matching Spec 4.3: max 1280px, responsive horizontal padding */
+.st-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 390px) {
+  .st-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .st-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .st-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Section vertical padding matching Spec 4.3 */
+.st-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+@media (min-width: 768px) {
+  .st-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .st-section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+/* Typography matching Spec 4.2 */
+.st-h1 {
+  font-family: var(--font-primary), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 4.8vw, 4.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+
+.st-h2 {
+  font-family: var(--font-primary), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.85rem, 3.2vw, 2.85rem);
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+}
+
+.st-h3 {
+  font-family: var(--font-primary), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+/* E02: Yellow underline bar exclusively under "phần mềm" in H1 */
+.hero-software-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.hero-software-highlight::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 0.06em;
+  height: 0.24em;
+  background-color: var(--brand);
+  border-radius: 4px;
+  z-index: -1;
+  transform-origin: left center;
+  animation: stUnderlineDraw 420ms var(--ease-out) 120ms both;
+}
+
+@keyframes stUnderlineDraw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* E01: Subtle Hero Entrance (H1 & CTA always visible, never opacity: 0) */
+.st-hero-copy-enter {
+  animation: stHeroCopySlide 460ms var(--ease-out) both;
+}
+
+.st-hero-stage-enter {
+  animation: stHeroStageSlide 600ms var(--ease-out) 80ms both;
+}
+
+@keyframes stHeroCopySlide {
+  from {
+    transform: translateY(8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes stHeroStageSlide {
+  from {
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* E03: Workspace subtle tilt on fine pointer */
+.st-workspace-tilt {
+  transition: transform 250ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .st-workspace-tilt {
+    transform: perspective(1200px) rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg))
+      translate3d(var(--shift-x, 0px), var(--shift-y, 0px), 0);
+  }
+}
+
+/* Subtle dot grid for studio workspace canvas (Spec 6.2) */
+.st-studio-dots {
+  background-color: #ffffff;
+  background-image: radial-gradient(rgba(32, 35, 38, 0.1) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* E04: Yellow connector signal animation */
+@keyframes stSignalFlow {
+  0% {
+    stroke-dashoffset: 48;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.st-connector-active {
+  stroke: var(--brand);
+  stroke-dasharray: 6 6;
+  animation: stSignalFlow 650ms linear infinite;
+}
+
+/* E05: Node & Log feedback */
+@keyframes stCheckPop {
+  from {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.st-check-enter {
+  animation: stCheckPop 160ms var(--ease-ui) both;
+}
+
+@keyframes stLogSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.st-log-enter {
+  animation: stLogSlideIn 180ms var(--ease-ui) both;
+}
+
+/* E06: Mascot subtle reaction when demo starts / finishes */
+@keyframes stMascotReceive {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes stMascotComplete {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.st-mascot-receiving {
+  animation: stMascotReceive 350ms var(--ease-ui) 1;
+}
+
+.st-mascot-complete {
+  animation: stMascotComplete 320ms var(--ease-ui) 1;
+}
+
+/* E07: Primary & Interactive Buttons */
+.st-btn-ink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 11px 22px;
+  border-radius: 11px;
+  background-color: var(--ink);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid var(--ink);
+  transition:
+    background-color var(--dur-fast) var(--ease-ui),
+    border-color var(--dur-fast) var(--ease-ui),
+    transform 80ms var(--ease-ui);
+}
+
+.st-btn-ink:hover {
+  background-color: #2f3338;
+}
+
+.st-btn-ink:active {
+  transform: scale(0.985);
+}
+
+.st-btn-ink:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.st-btn-ink .st-arrow {
+  color: var(--brand);
+  transition: transform var(--dur-fast) var(--ease-ui);
+}
+
+.st-btn-ink:hover .st-arrow {
+  transform: translateX(3px);
+}
+
+.st-btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 18px;
+  border-radius: 11px;
+  background-color: var(--brand);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid #eab308;
+  transition:
+    background-color var(--dur-fast) var(--ease-ui),
+    transform 80ms var(--ease-ui);
+}
+
+.st-btn-brand:hover:not(:disabled) {
+  background-color: var(--brand-hover);
+}
+
+.st-btn-brand:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+.st-btn-brand:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.st-btn-brand:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.st-btn-brand .st-arrow {
+  transition: transform var(--dur-fast) var(--ease-ui);
+}
+
+.st-btn-brand:hover:not(:disabled) .st-arrow {
+  transform: translateX(3px);
+}
+
+/* E09: Project preview inner zoom on desktop hover/focus */
+.st-project-inner {
+  transition: transform 320ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .st-project-card:hover .st-project-inner,
+  .st-project-card:focus-visible .st-project-inner {
+    transform: scale(1.015);
+  }
+}
+
+/* E11: Form inputs */
+.st-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-color: #ffffff;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition:
+    border-color var(--dur-fast) var(--ease-ui),
+    box-shadow var(--dur-fast) var(--ease-ui);
+}
+
+.st-input::placeholder {
+  color: #9ca3af;
+}
+
+.st-input:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(255, 198, 42, 0.35);
+}
+
+.st-input[aria-invalid="true"] {
+  border-color: var(--error);
+  background-color: #fef2f2;
+}
+
+/* E12: Mobile menu drawer */
+@keyframes stMenuEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.st-mobile-drawer {
+  animation: stMenuEnter 200ms var(--ease-ui) both;
+}
+
+/* Shared Sèo Trum utility classes across homepage & inner pages */
+.st-eyebrow {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.st-tech-grid {
+  background-color: #ffffff;
+  background-image: radial-gradient(rgba(32, 35, 38, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.st-card-hover {
+  transition:
+    transform var(--dur-normal) var(--ease-out),
+    box-shadow var(--dur-normal) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-ui);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .st-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(20, 23, 28, 0.06);
+  }
+}
+
+.st-btn-lift {
+  transition:
+    transform var(--dur-fast) var(--ease-ui),
+    background-color var(--dur-fast) var(--ease-ui),
+    box-shadow var(--dur-fast) var(--ease-ui);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .st-btn-lift:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+}
+
+.st-mascot-hover {
+  transition: transform var(--dur-normal) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .st-mascot-hover:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.st-yellow-bar {
+  transform-origin: left center;
+  animation: stUnderlineDraw 420ms var(--ease-out) 120ms both;
+}
+
+/* Reduced Motion Compliance (Spec Section 7 & 8) */
+@media (prefers-reduced-motion: reduce) {
+  .st-hero-copy-enter,
+  .st-hero-stage-enter,
+  .st-check-enter,
+  .st-log-enter,
+  .st-mascot-receiving,
+  .st-mascot-complete,
+  .st-mobile-drawer {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .hero-software-highlight::after {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+
+  .st-connector-active {
+    animation: none !important;
+    stroke-dasharray: none !important;
+  }
+
+  .st-workspace-tilt,
+  .st-project-inner,
+  .st-btn-ink,
+  .st-btn-brand,
+  .st-btn-ink .st-arrow,
+  .st-btn-brand .st-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Legacy template utilities preserved for inner pages */
+@utility bg-gradient {
+  @apply bg-linear-to-b from-[#f6f7f8] from-[0.53%] to-white to-[83.28%];
+}
+
 @utility form-input {
-  @apply w-full rounded border-transparent bg-light px-6 py-4 text-text-dark placeholder:text-text-light focus:border-primary dark:focus:border-darkmode-primary focus:ring-transparent dark:border-darkmode-border dark:bg-darkmode-light dark:text-darkmode-text-light;
+  @apply w-full rounded-lg border border-border bg-white px-4 py-3 text-text-dark placeholder:text-text-light focus:border-primary focus:ring-transparent;
 }
 
 @utility form-label {
-  @apply mb-4 block font-secondary text-xl font-normal text-text-dark dark:text-darkmode-text-light;
+  @apply mb-2 block font-secondary text-sm font-semibold text-text-dark;
 }

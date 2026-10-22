@@ -93,19 +93,19 @@ function normalizePattern(baseDir, pattern) {
 
   try {
     if (fs.statSync(fullPath).isDirectory()) {
-      return path.join(fullPath, "**/*.html");
+      return path.join(fullPath, "**/*.html").replace(/\\/g, "/");
     }
   } catch {
     // treat as glob pattern
   }
 
-  return fullPath;
+  return fullPath.replace(/\\/g, "/");
 }
 
 async function discoverHtmlFiles(inputDir) {
-  const patterns = [path.join(inputDir, "**/*.html")];
+  const patterns = [path.join(inputDir, "**/*.html").replace(/\\/g, "/")];
 
-  const ignore = DEFAULT_EXCLUDES.map((p) => path.join(inputDir, p));
+  const ignore = DEFAULT_EXCLUDES.map((p) => path.join(inputDir, p).replace(/\\/g, "/"));
 
   let files = await glob(patterns, {
     ignore,

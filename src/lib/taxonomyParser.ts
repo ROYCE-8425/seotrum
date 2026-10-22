@@ -1,5 +1,5 @@
 import { getSinglePage } from "@/lib/contentParser";
-import { slugify } from "@/lib/utils/textConverter";
+import { humanize, slugify } from "@/lib/utils/textConverter";
 
 // get all taxonomies from frontmatter
 export const getTaxonomy = (folder: string, name: string): Array<string> => {
@@ -29,4 +29,24 @@ export const getAllTaxonomy = (folder: string, name: string) => {
   }
 
   return taxonomies;
+};
+
+// Resolve ASCII slug back to original Vietnamese display label
+export const getTaxonomyLabel = (
+  folder: string,
+  name: string,
+  targetSlug: string,
+): string => {
+  const singlePages = getSinglePage(folder);
+  for (const page of singlePages) {
+    const list: string[] | undefined = page.frontmatter[name];
+    if (Array.isArray(list)) {
+      for (const item of list) {
+        if (slugify(item) === targetSlug) {
+          return item;
+        }
+      }
+    }
+  }
+  return humanize(targetSlug);
 };

@@ -6,6 +6,11 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
+    settings: {
+      react: {
+        version: "19.2",
+      },
+    },
     rules: {
       // TypeScript
       "@typescript-eslint/no-unused-expressions": "off",
@@ -25,6 +30,8 @@ const eslintConfig = defineConfig([
 
       // React
       "react-hooks/exhaustive-deps": "error",
+      "react-hooks/set-state-in-effect": "off",
+      "react-hooks/purity": "off",
     },
   },
   // Override default ignores of eslint-config-next

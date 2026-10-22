@@ -1,67 +1,67 @@
 {
   "site": {
-    "title": "Nextplate",
-    "base_url": "https://nextplate.netlify.app",
+    "title": "Sèo Trum — Dịch Vụ Tự Động Hoá (Automation) & Phần Mềm Theo Yêu Cầu",
+    "base_url": "https://seotrum.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
-    "logo_height": "27",
-    "logo_text": "Nextplate"
+    "logo": "/images/brand-logo.png",
+    "logo_darkmode": "/images/brand-logo.png",
+    "logo_width": "176",
+    "logo_height": "65",
+    "logo_text": "Sèo Trum"
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "searchable_folders": ["blog", "authors"],
     "sticky_header": true,
-    "theme_switcher": true,
-    "default_theme": "dark",
-    "pagination": 2,
+    "theme_switcher": false,
+    "default_theme": "light",
+    "pagination": 6,
     "summary_length": 200,
     "blog_folder": "blog"
   },
 
   "announcement": {
-    "enable": true,
-    "content": "<span class='text-center block'>♥️ Loving Nextplate? <a class='underline' href='https://github.com/zeon-studio/nextplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "enable": false,
+    "content": "",
     "expire_days": 7
   },
 
   "params": {
-    "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "contact_form_action": "#tu-van",
+    "copyright": "© 2026 Sèo Trum"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Github",
-    "link": "https://github.com/zeon-studio/nextplate"
+    "label": "Trao đổi bài toán",
+    "link": "#tu-van"
   },
 
   "google_tag_manager": {
     "enable": false,
-    "gtm_id": "GTM-XXXXXX"
+    "gtm_id": ""
   },
 
   "disqus": {
-    "enable": true,
-    "shortname": "themefisher-template",
+    "enable": false,
+    "shortname": "",
     "settings": {}
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "Sèo Trum",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Next Boilerplate"
+    "meta_description": "Sèo Trum cung cấp dịch vụ tự động hoá (automation), xây dựng phần mềm, web app, bot và tích hợp API theo yêu cầu giúp doanh nghiệp giảm thao tác thủ công và vận hành gọn hơn."
   },
 
   "llms": {
     "generate_llms_txt": true,
-    "generate_llms_full_txt": false,
+    "generate_llms_full_txt": true,
     "generate_individual_md": false,
     "include": [],
-    "exclude": []
+    "exclude": ["/elements"]
   }
 }

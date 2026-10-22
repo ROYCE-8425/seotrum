@@ -1,57 +1,38 @@
 {
   "main": [
     {
-      "name": "Home",
-      "url": "/"
+      "name": "Phần mềm",
+      "url": "/automation-studio"
     },
     {
-      "name": "About",
-      "url": "/about"
+      "name": "Giải pháp",
+      "url": "/services"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Dự án",
+      "url": "/case-studies"
     },
     {
-      "name": "Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Contact",
-          "url": "/contact"
-        },
-        {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Authors",
-          "url": "/authors"
-        },
-        {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
-        }
-      ]
+      "name": "Góc chia sẻ",
+      "url": "/blog"
     }
   ],
   "footer": [
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Phần mềm",
+      "url": "/automation-studio"
     },
     {
-      "name": "Privacy Policy",
-      "url": "/privacy-policy"
+      "name": "Giải pháp",
+      "url": "/services"
+    },
+    {
+      "name": "Dự án",
+      "url": "/case-studies"
+    },
+    {
+      "name": "Liên hệ",
+      "url": "/contact"
     }
   ]
 }

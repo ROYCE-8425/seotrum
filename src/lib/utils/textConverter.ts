@@ -1,9 +1,15 @@
 import { slug } from "github-slugger";
 import { marked } from "marked";
 
-// slugify
+// slugify (Vietnamese ASCII SEO-friendly slug)
 export const slugify = (content: string) => {
-  return slug(content);
+  if (!content) return "";
+  const normalized = content
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D");
+  return slug(normalized);
 };
 
 // markdownify

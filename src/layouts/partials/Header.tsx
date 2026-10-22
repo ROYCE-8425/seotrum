@@ -1,21 +1,15 @@
 "use client";
 
-import Logo from "@/components/Logo";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import config from "@/config/config.json";
 import menu from "@/config/menu.json";
+import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
-import { IoSearch } from "react-icons/io5";
+import React, { useEffect, useRef, useState } from "react";
 
-//  child navigation link interface
 export interface IChildNavigationLink {
   name: string;
   url: string;
 }
 
-// navigation link interface
 export interface INavigationLink {
   name: string;
   url: string;
@@ -24,163 +18,215 @@ export interface INavigationLink {
 }
 
 const Header = () => {
-  // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
-  const { navigation_button, settings } = config;
-  // get current path
-  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const drawerRef = useRef<HTMLDivElement | null>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
 
-  // scroll to top on route change
   useEffect(() => {
-    window.scroll(0, 0);
-  }, [pathname]);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const timer = window.setTimeout(() => {
+      firstLinkRef.current?.focus();
+    }, 30);
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setMobileOpen(false);
+        triggerRef.current?.focus();
+      } else if (e.key === "Tab" && drawerRef.current) {
+        const focusables = drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileOpen]);
+
+  const closeMobileMenu = (restoreFocus = false) => {
+    setMobileOpen(false);
+    if (restoreFocus) {
+      window.setTimeout(() => {
+        triggerRef.current?.focus();
+      }, 20);
+    }
+  };
 
   return (
     <header
-      className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
+      id="top"
+      className={`sticky top-0 z-40 h-[72px] lg:h-[82px] bg-[#FFFFFF]/95 backdrop-blur-sm border-b border-[#ECEEF2] transition-shadow duration-200 ${
+        scrolled ? "shadow-[0_4px_20px_rgba(20,23,28,0.05)]" : ""
+      }`}
     >
-      <nav className="navbar container">
-        {/* logo */}
-        <div className="order-0">
-          <Logo />
-        </div>
-        {/* navbar toggler */}
-        <input id="nav-toggle" type="checkbox" className="hidden" />
-        <label
-          htmlFor="nav-toggle"
-          className="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1"
+      <div className="st-container h-full flex items-center justify-between gap-4">
+        {/* Left: brand-logo.png */}
+        <Link
+          href="/"
+          aria-label="Sèo Trum — Trang chủ"
+          className="inline-flex items-center shrink-0 rounded-lg focus-visible:outline-2 focus-visible:outline-[#202326]"
         >
-          <svg
-            id="show-button"
-            className="h-6 fill-current block"
-            viewBox="0 0 20 20"
-          >
-            <title>Menu Open</title>
-            <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
-          </svg>
-          <svg
-            id="hide-button"
-            className="h-6 fill-current hidden"
-            viewBox="0 0 20 20"
-          >
-            <title>Menu Close</title>
-            <polygon
-              points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-              transform="rotate(45 10 10)"
-            ></polygon>
-          </svg>
-        </label>
-        {/* /navbar toggler */}
+          <Image
+            src="/images/brand-logo.png"
+            alt="Sèo Trum"
+            width={168}
+            height={62}
+            priority
+            className="w-[140px] lg:w-[164px] h-auto object-contain"
+          />
+        </Link>
 
-        <ul
-          id="nav-menu"
-          className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
+        {/* Center Nav (Desktop) */}
+        <nav
+          aria-label="Điều hướng chính"
+          className="hidden lg:flex items-center gap-9"
         >
-          {main.map((menu, i) => (
-            <React.Fragment key={`menu-${i}`}>
-              {menu.hasChildren ? (
-                <li className="nav-item nav-dropdown group relative">
-                  <input
-                    type="checkbox"
-                    id={`submenu-${menu.name}`}
-                    className="peer hidden lg:hidden"
-                  />
-                  <label
-                    htmlFor={`submenu-${menu.name}`}
-                    className={`nav-link inline-flex items-center ${
-                      menu.children?.map(({ url }) => url).includes(pathname) ||
-                      menu.children
-                        ?.map(({ url }) => `${url}/`)
-                        .includes(pathname)
-                        ? "active"
-                        : ""
-                    }`}
-                  >
-                    {menu.name}
-                    <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
-                  </label>
-                  <ul className="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
-                    {menu.children?.map((child, i) => (
-                      <li className="nav-dropdown-item" key={`children-${i}`}>
-                        <Link
-                          href={child.url}
-                          className={`nav-dropdown-link block ${
-                            (pathname === `${child.url}/` ||
-                              pathname === child.url) &&
-                            "active"
-                          }`}
-                        >
-                          {child.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li className="nav-item">
-                  <Link
-                    href={menu.url}
-                    className={`nav-link block ${
-                      (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "active"
-                    }`}
-                  >
-                    {menu.name}
-                  </Link>
-                </li>
-              )}
-            </React.Fragment>
-          ))}
-          {navigation_button.enable && (
-            <li className="mt-4 inline-block lg:hidden">
+          {main.map((item) => {
+            const href = item.url.startsWith("#") ? `/${item.url}` : item.url;
+            return (
               <Link
-                className="btn btn-outline-primary btn-sm"
-                href={navigation_button.link}
-                target={
-                  navigation_button.link.startsWith("http") ? "_blank" : "_self"
-                }
-                rel={
-                  navigation_button.link.startsWith("http")
-                    ? "noopener noreferrer"
-                    : undefined
-                }
+                key={item.name}
+                href={href}
+                className="text-[15px] font-medium text-[#202326] hover:text-[#202326] relative py-1.5 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#FFC62A] after:transition-all hover:after:w-full"
               >
-                {navigation_button.label}
+                {item.name}
               </Link>
-            </li>
-          )}
-        </ul>
-        <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-          {settings.search && (
-            <button
-              className="border-border text-text-dark hover:text-primary dark:border-darkmode-border mr-5 inline-block border-r pr-5 text-xl dark:text-white dark:hover:text-darkmode-primary"
-              aria-label="search"
-              data-search-trigger
-            >
-              <IoSearch />
-            </button>
-          )}
-          <ThemeSwitcher className="mr-5" />
-          {navigation_button.enable && (
-            <Link
-              className="btn btn-outline-primary btn-sm hidden lg:inline-block"
-              href={navigation_button.link}
-              target={
-                navigation_button.link.startsWith("http") ? "_blank" : "_self"
-              }
-              rel={
-                navigation_button.link.startsWith("http")
-                  ? "noopener noreferrer"
-                  : undefined
-              }
-            >
-              {navigation_button.label}
-            </Link>
-          )}
+            );
+          })}
+        </nav>
+
+        {/* Right CTA (Desktop) + Mobile Menu Button */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/#tu-van"
+            className="hidden lg:inline-flex items-center justify-center gap-2 bg-[#202326] text-[#FFFFFF] text-[14.5px] font-semibold rounded-[11px] px-[20px] py-[11px] hover:bg-[#141618] transition-colors shadow-2xs"
+          >
+            <span>Trao đổi bài toán</span>
+            <span className="text-[#FFC62A] text-[15px] leading-none font-bold" aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+
+          <button
+            ref={triggerRef}
+            type="button"
+            aria-label={
+              mobileOpen ? "Đóng menu điều hướng" : "Mở menu điều hướng"
+            }
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-drawer"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-[10px] border border-[#E5E7EB] bg-[#FFFFFF] text-[#202326] hover:bg-[#F6F7F8] transition-colors"
+          >
+            {mobileOpen ? (
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="4" y1="7" x2="20" y2="7" />
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="17" x2="20" y2="17" />
+              </svg>
+            )}
+          </button>
         </div>
-      </nav>
+      </div>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          id="mobile-nav-drawer"
+          ref={drawerRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu điều hướng di động"
+          className="lg:hidden fixed inset-x-0 top-[72px] bg-[#FFFFFF] border-b border-[#E5E7EB] shadow-[0_14px_34px_rgba(20,23,28,0.08)] z-50"
+        >
+          <div className="st-container py-5 flex flex-col gap-2">
+            {main.map((item, idx) => {
+              const href = item.url.startsWith("#") ? `/${item.url}` : item.url;
+              return (
+                <Link
+                  key={item.name}
+                  ref={idx === 0 ? firstLinkRef : undefined}
+                  href={href}
+                  onClick={() => closeMobileMenu(false)}
+                  className="px-3 py-2.5 rounded-[10px] text-[16px] font-semibold text-[#202326] hover:bg-[#F6F7F8] transition-colors"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+
+            <div className="pt-2 mt-1 border-t border-[#E5E7EB] flex items-center justify-between gap-3">
+              <Link
+                href="/#tu-van"
+                onClick={() => closeMobileMenu(false)}
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-[#202326] text-[#FFFFFF] text-[15px] font-bold rounded-[10px] px-[18px] py-[12px]"
+              >
+                <span>Trao đổi bài toán</span>
+                <span className="text-[#FFC62A]" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+              <button
+                type="button"
+                onClick={() => closeMobileMenu(true)}
+                className="px-4 py-[11px] rounded-[10px] border border-[#E5E7EB] text-[14px] font-semibold text-[#5B6068] hover:text-[#202326] hover:bg-[#F6F7F8]"
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

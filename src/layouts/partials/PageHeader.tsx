@@ -1,13 +1,33 @@
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { humanize } from "@/lib/utils/textConverter";
 
-const PageHeader = ({ title }: { title: string }) => {
+const PageHeader = ({
+  title,
+  eyebrow = "CHUYÊN TRANG KIẾN THỨC & HỆ THỐNG",
+  subtitle,
+}: {
+  title: string;
+  eyebrow?: string;
+  subtitle?: string;
+}) => {
   return (
-    <section>
-      <div className="container text-center">
-        <div className="rounded-2xl bg-gradient-to-b from-body to-light px-8 py-14 dark:from-darkmode-body dark:to-darkmode-light">
-          <h1>{humanize(title)}</h1>
-          <Breadcrumbs className="mt-6" />
+    <section className="pt-8 pb-12 lg:pt-12 lg:pb-16 border-b border-[#E5E7EB] bg-[#FFFFFF]">
+      <div className="st-container">
+        <Breadcrumbs className="mb-5" />
+        <div className="bg-[#F6F7F8] border border-[#E5E7EB] rounded-[20px] p-6 sm:p-9">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span
+              className="w-2.5 h-2.5 rounded-full bg-[#FFC62A]"
+              aria-hidden="true"
+            />
+            <span className="st-eyebrow text-[#5B6068]">{eyebrow}</span>
+          </div>
+          <h1 className="st-h1 text-[#202326] m-0">{humanize(title)}</h1>
+          {subtitle && (
+            <p className="text-[16.5px] text-[#5B6068] leading-relaxed max-w-[64ch] mt-3 mb-0">
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
     </section>

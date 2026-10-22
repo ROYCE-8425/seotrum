@@ -1,10 +1,10 @@
 ---
 enable: true
-title: "Ready to build your next project with Next?"
-image: "/images/call-to-action.png"
-description: "Experience the future of web development with Nextplate and Next. Build lightning-fast static sites with ease and flexibility."
+title: "Sẵn Sàng Tự Động Hoá Quy Trình & Bứt Phá Thứ Hạng SEO Cùng Sèo Trum?"
+image: "/images/logo.png"
+description: "Đừng để các thao tác thủ công lặp đi lặp lại kìm hãm tốc độ tăng trưởng của bạn. Hãy để **Sèo Trum** thiết kế kiến trúc hệ thống ứng dụng tự động hoá và giải pháp SEO may đo riêng cho doanh nghiệp của bạn."
 button:
   enable: true
-  label: "Fork Deploy and Edit Online 🚀"
-  link: "https://app.sitepins.com/new/clone?name=Nextplate&repository=https://github.com/zeon-studio/nextplate?aff=nextplate"
+  label: "Yêu Cầu Tư Vấn & Báo Giá Hệ Thống >_"
+  link: "/contact"
 ---
